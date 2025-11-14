@@ -1,0 +1,383 @@
+/* Variables y Estilos Generales */
+:root {
+    --primary-color: #0077b6; /* Un azul profesional */
+    --secondary-color: #f0f4f8; /* Un gris claro para el fondo */
+    --text-color: #333;
+    --dark-color: #0d1b2a; /* Azul muy oscuro para el header */
+    --card-background: #ffffff;
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.15);
+    --transition-speed: 0.4s;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header y Navegación */
+.header {
+    background-color: var(--dark-color);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    margin-left: 2rem;
+    transition: color var(--transition-speed);
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* Secciones Generales */
+.section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: var(--dark-color);
+}
+
+/* Sección Héroe */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 8rem 2rem;
+    text-align: left;
+    background-color: var(--card-background);
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.hero-image-container img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: var(--shadow-light);
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background-color: #005f93;
+    transform: translateY(-3px);
+}
+
+/* Sección de Proyectos */
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.proyecto-card {
+    display: block;
+    background: var(--card-background);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.proyecto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-title {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: #666;
+}
+
+.proyecto-tech {
+    margin-top: 1.5rem;
+}
+
+.proyecto-tech span {
+    display: inline-block;
+    background-color: #e9ecef;
+    color: #6c757d;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Sección de Habilidades */
+.habilidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.habilidad-item {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow-light);
+    transition: transform var(--transition-speed);
+}
+
+.habilidad-item:hover {
+    transform: scale(1.05);
+}
+
+.habilidad-title {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+/* Sección de Contacto */
+.contacto-section {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 6rem 2rem;
+}
+
+.contacto-text {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button.primary {
+    background-color: #fff;
+    color: var(--primary-color);
+}
+
+.cta-button.primary:hover {
+    background-color: #e9ecef;
+}
+
+/* Pie de página */
+.footer {
+    background-color: var(--dark-color);
+    color: #fff;
+    padding: 2rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color var(--transition-speed);
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Animación al hacer scroll */
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Media Queries para diseño responsive */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+    }
+
+    .nav-link {
+        margin: 0.5rem 1rem;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image-container {
+        margin-top: 2rem;
+    }
+}
+
+/* --- Nuevas Secciones --- */
+
+/* Estilo para las tarjetas en general */
+.formacion-card, .experiencia-card, .idioma-item {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.formacion-card:hover, .experiencia-card:hover, .idioma-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.card-description, .experiencia-list, .idioma-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Sección de Formación */
+.formacion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Sección de Experiencia */
+.experiencia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.experiencia-list {
+    text-align: left;
+    padding-left: 1.2rem;
+}
+
+/* Sección de Idiomas */
+.idiomas-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.idioma-item {
+    width: 250px;
+    text-align: center;
+}
+
+/*Estilo para punto de venta*/
+
+.project-details {
+    /* Define un ancho máximo para el contenido dentro del 'section' */
+    max-width: 800px;
+    
+    /* Centra el bloque de contenido (project-details) dentro del section */
+    margin: 0 auto;
+    
+    /* Anula la alineación central que hereda de .section */
+    text-align: left; 
+    
+    padding-top: 2rem;
+}
+
+.project-details p {
+    /* Agrega un poco de espacio entre párrafos */
+    margin-bottom: 1.5rem; 
+}
+
+/* Para que la imagen se vea bien centrada */
+.project-details img {
+    /* Asegura que la imagen no exceda el ancho del contenedor */
+    max-width: 100%;
+    height: auto;
+    display: block; /* Necesario para que el margin auto funcione */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Animación al hacer scroll */
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
