@@ -87,28 +87,32 @@
     </footer>
 
     <script>
-        document.getElementById('toggleVideoButton').addEventListener('click', function(e) {
-            e.preventDefault(); // Evita que la página salte arriba
+    document.getElementById('toggleVideoButton').addEventListener('click', function(e) {
+        e.preventDefault(); // Evita que la página salte arriba
+        
+        var container = document.getElementById('videoContainer');
+        // ¡CORRECCIÓN AQUÍ! Debe apuntar al ID del iframe
+        var iframe = document.getElementById('projectVideoIframe'); 
+        
+        // Alterna la clase 'active' para mostrar/ocultar el contenedor
+        container.classList.toggle('active');
+        
+        if (container.classList.contains('active')) {
+            this.textContent = 'Ocultar Video';
+            // Usa 'container' para el scroll, ya que 'iframe' no siempre tiene scrollIntoView
+            container.scrollIntoView({ behavior: 'smooth' }); 
+        } else {
+            this.textContent = 'Video de Funcionamiento';
             
-            var container = document.getElementById('videoContainer');
-            var video = document.getElementById('projectVideo');
-            
-            // Alterna la clase 'active' para mostrar/ocultar el contenedor
-            container.classList.toggle('active');
-            
-            if (container.classList.contains('active')) {
-                this.textContent = 'Ocultar Video';
-                video.scrollIntoView({ behavior: 'smooth' }); // Desplaza suavemente hasta el video
-            } else {
-                this.textContent = 'Video de Funcionamiento';
-                // Pausa el video al ocultarlo
-                video.pause(); 
-            }
-        });
-    </script>
+            // ¡CORRECCIÓN AQUÍ! Pausar el video de YouTube recargando el SRC del iframe
+            iframe.src = iframe.src; 
+        }
+    });
+</script>
 
 </body>
 </html>
+
 
 
 
