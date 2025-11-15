@@ -4,12 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Punto de Venta - Luis Ramos Reyes</title>
-    <!-- RUTA CORREGIDA: Usamos el enlace relativo más fiable -->
     <link rel="stylesheet" href="../css/project-styles.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos básicos para el video (puedes mover esto a project-styles.css) */
+        .video-player-container {
+            margin: 3rem auto 1rem;
+            max-width: 800px;
+            display: none; /* Inicia oculto */
+        }
+        .video-player-container.active {
+            display: block; /* Se muestra al hacer clic */
+        }
+    </style>
 </head>
 <body>
 
@@ -22,7 +32,6 @@
         </div>
     </header>
 
-    <!-- La clase 'section' es visible por defecto gracias a la corrección en el CSS -->
     <main class="section">
         <h1 class="section-title">Sistema de Punto de Venta</h1>
         
@@ -40,6 +49,14 @@
                 Este sistema fue diseñado para agilizar los procesos de facturación, inventario y gestión de personal en pequeñas y medianas empresas. Utiliza una arquitectura robusta para garantizar la integridad de los datos y una interfaz de usuario intuitiva.
             </p>
             
+            <div id="videoContainer" class="video-player-container">
+                <video id="projectVideo" controls width="100%" poster="../recurso/Poster_PV.png">
+                    <source src="../recurso/videos/VideoPuntoDeVenta.mp4" type="video/mp4">
+                    Tu navegador no soporta el reproductor de video HTML5.
+                </video>
+            </div>
+
+
             <div class="gallery-scroll">
                 <img src="../recurso/login rojo.PNG">
                 <img src="../recurso/login.PNG">
@@ -51,10 +68,8 @@
                 <img src="../recurso/pago.PNG">
             </div>
 
-
-
             <div style="text-align: center; margin-top: 2rem;">
-                <a href="" class="cta-button">Video de Funcionamiento</a>
+                <a href="#" class="cta-button" id="toggleVideoButton">Video de Funcionamiento</a>
             </div>
         </div>
     </main>
@@ -64,6 +79,27 @@
             <p>&copy; 2025 Luis Ramos Reyes. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('toggleVideoButton').addEventListener('click', function(e) {
+            e.preventDefault(); // Evita que la página salte arriba
+            
+            var container = document.getElementById('videoContainer');
+            var video = document.getElementById('projectVideo');
+            
+            // Alterna la clase 'active' para mostrar/ocultar el contenedor
+            container.classList.toggle('active');
+            
+            if (container.classList.contains('active')) {
+                this.textContent = 'Ocultar Video';
+                video.scrollIntoView({ behavior: 'smooth' }); // Desplaza suavemente hasta el video
+            } else {
+                this.textContent = 'Video de Funcionamiento';
+                // Pausa el video al ocultarlo
+                video.pause(); 
+            }
+        });
+    </script>
 
 </body>
 </html>
